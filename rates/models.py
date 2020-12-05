@@ -28,6 +28,8 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
+        
+
 
 class Project(models.Model):
     title = models.TextField(max_length=30)
