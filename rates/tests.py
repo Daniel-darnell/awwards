@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 
 class ProfileTest(TestCase):
     def setUp(self):
-        self.peris = User(username = 'Daniel',email = 'darnell@gmail.com')
-        self.peris = Profile(user = Self.daniel,user_id = 1,bio = 'my awwards',profile_pic = 'image.jpg',date_craeted='Oct,12.2020')
+        self.daniel = User(username = 'Daniel',email = 'darnell@gmail.com')
+        self.daniel = Profile(user = Self.daniel,user_id = 1,bio = 'my awwards',profile_pic = 'image.jpg',date_craeted='Oct,12.2020')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.daniel,Profile))
@@ -19,7 +19,7 @@ class ProfileTest(TestCase):
         self.assertTrue(len(all_profiles),0)
 
     def test_delete_profile(self):
-        self.peris.delete_profile()
+        self.daniel.delete_profile()
         all_profiles = Profile.objects.all()
         self.assertEqual(len(all_profiles),0)
 
